@@ -6,7 +6,7 @@ const BASE_URL = "https://api.themoviedb.org/3";
 
 export async function GET() {
   if (!API_KEY) {
-    return NextResponse.json({ error: "API key is not defined" }, { status: 500 });
+    return NextResponse.json({ error: "API key is not defined " }, { status: 500 });
   }
 
   const res = await fetch(

@@ -6,12 +6,12 @@ import { getMovies } from "@/api/getMovies";
 import { Movie } from "@/types/movies";
 
 export default function Home() {
-  const { data, isLoading, error } = useQuery({
+  const { data, isPending, error } = useQuery({
     queryKey: ["movies"],
     queryFn: getMovies,
   });
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isPending) return <div>Loading...</div>;
   if (error) return <div>Error: {(error as Error).message}</div>;
 
   return (
